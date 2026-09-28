@@ -2,12 +2,19 @@ merge_queue:
   max_parallel_checks: 1
 queue_rules:
   - name: default
-    batch_size: 2
+    batch_size: 5
     batch_max_wait_time: 1 minute
-    merge_method: merge-batch
-    branch_protection_injection_mode: merge
+    merge_method: merge
     queue_conditions: true
     merge_conditions:
-      - check-success = VM4 Approval Dismissal Delay
-      - '#approved-reviews-by >= 1'
+      - check-success = VM4 Checked Car Gate
+priority_rules:
+  - name: urgent
+    conditions:
+      - title = VM4-CHECKED-CAR-URGENT-20260929
+    priority: high
+    allow_checks_interruption: true
+  - name: normal
+    conditions: []
+    priority: low
 pull_request_rules: []
