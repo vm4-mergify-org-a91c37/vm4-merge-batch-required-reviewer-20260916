@@ -1,0 +1,12 @@
+name: VM4 Approval Dismissal Delay
+on:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  delay:
+    name: VM4 Approval Dismissal Delay
+    runs-on: ubuntu-latest
+    steps:
+      - run: sleep 60
+      - run: echo ok
