@@ -7,4 +7,7 @@ queue_rules:
     merge_method: merge-batch
     branch_protection_injection_mode: merge
     queue_conditions: true
-    merge_conditions: true
+    merge_conditions:
+      - check-success = VM4 Approval Dismissal Delay
+      - '#approved-reviews-by >= 1'
+pull_request_rules: []
