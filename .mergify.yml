@@ -2,12 +2,13 @@ merge_queue:
   max_parallel_checks: 1
 queue_rules:
   - name: default
-    batch_size: 5
+    batch_size: 1
     batch_max_wait_time: 1 minute
     merge_method: merge
     queue_conditions: true
     merge_conditions:
       - check-success = VM4 Approval Dismissal Delay
+      - schedule = 23:00-23:05
 priority_rules:
   - name: urgent
     conditions:
