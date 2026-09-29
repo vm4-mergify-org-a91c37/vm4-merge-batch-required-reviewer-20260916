@@ -2,8 +2,8 @@ merge_queue:
   max_parallel_checks: 1
 queue_rules:
   - name: default
-    batch_size: 12
-    batch_max_wait_time: 3 minutes
+    batch_size: 5
+    batch_max_wait_time: 1 minute
     merge_method: merge
     queue_conditions: true
     merge_conditions:
